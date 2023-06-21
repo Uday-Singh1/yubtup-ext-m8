@@ -1,0 +1,179 @@
+@use "./mixins";
+@use "./colors";
+
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+main {
+    height: 100vh;
+    width: 100%;
+    background-color: rgb(33, 29, 29);
+    overflow: hidden;
+
+}
+
+.main {
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: row; 
+    height: 100vh;
+    width: 100%;
+    background-color: rgb(33, 29, 29);
+    gap: 27rem;
+    overflow: hidden;
+}
+
+
+header {
+    background-color: rgb(32, 7, 84);
+    height: 14rem;
+    width: 100%;
+}
+
+.title__text {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    padding-top: 3rem;
+    color: white;
+    font-size: 5rem;
+    font-family: sans-serif;
+    gap: 1.3rem;
+}
+
+.title__text:hover {
+    transition: 0.3s;
+    color: purple;
+}
+
+.aside__side {
+    display: flex;
+    justify-content: flex-end;
+    //background-color: purple;
+    height: 90vh;
+    width: 24rem;
+    overflow: scroll;
+    flex-direction: column;
+    z-index: 1;
+}
+
+.aside_img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height:  17rem;
+    width: 19rem;
+    margin-bottom: 3rem;
+    overflow: scroll;
+    //border: double purple 0.5rem;
+    transition: 0.4s all ease-in-out;
+
+
+    &:hover {
+
+        &:hover {
+            
+            transform: scale(1.02);
+        }
+        &:not(:hover) { 
+            box-shadow: none; 
+            transform: scale(1); 
+        }
+    }
+}
+
+
+.main__video {
+    margin-top: 5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 45rem;
+    border:  black solid 0.5rem;
+    transition: 0.4s all ease-in-out; /* Voeg hier de overgangseffecteigenschappen toe */
+
+    &:hover {
+        box-shadow: rgb(108, 18, 153) 0rem 0rem 1rem 1rem;
+        transform: scale(1.02);
+    }
+    &:not(:hover) { /* Pseudo-selector voor wanneer er niet over wordt gehoverd */
+        box-shadow: none; /* Verwijder de box-shadow */
+        transform: scale(1); /* Herstel de schaal naar de oorspronkelijke grootte */
+    }
+}
+
+
+
+
+.action__bar{
+    background-color: green;
+    height: 20rem;
+    width: 10rem;
+}
+
+
+
+
+.comments {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    gap: 2rem;
+
+    &__comment {
+        border: 0.2rem solid colors.$secondary-color;
+        background-color: colors.$primary-color;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        padding: 2rem;
+        gap: 2rem;
+        font-size: 2rem;
+        color: colors.$text-color;
+    }
+
+    &__uploader {
+        width: 7rem;
+        aspect-ratio: 1/1;
+        border-radius: 50%;
+        border: 0.2rem solid colors.$text-color;
+    }
+
+    &__comment--add {
+        padding: 0;
+        height: 11.3rem;
+    }
+
+    &__input {
+        width: 80%;
+        height: 100%;
+        background: none;
+        border: none;
+        font-size: 2rem;
+        padding-left: 2rem;
+        color: colors.$text-color;
+    }
+
+    &__button {
+        width: 20%;
+        font-size: 3rem;
+        background: none;
+        border: 0;
+        padding: 0;
+        color: colors.$text-color;
+        transition: 0.2s;
+
+        &:hover {
+            color: colors.$accent-color;
+            cursor: pointer;
+        }
+    }
+}
